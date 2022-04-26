@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <title>Assignment_2</title>
+  </head>
+  <body>
+  <style>
+  
+  body 
+{
+  height: 100vh;
+  width: 100%;
+}
+ 
+ .container 
+  {
+  width: 300px;
+  height: 350px;
+  display: flex;
+  padding-top: 20px;
+  padding-left: 250px;
+  padding-right:250px;
+  margin-left:350px;
+  margin-top:50px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 6px 6px 3px rgba(236, 236, 235, 0.5),
+              inset -6px -6px 3px rgba(236, 236, 235, 0.5);
+  }
+  input 
+  {
+  height: 30px;
+  width: 300px;
+  padding: 0 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+input:hover {
+  background-color: rgb(235, 235, 235);
+  }
+ button 
+ {
+  margin: 45px 0 30px 0;
+  height: 28px;
+  width: 100px;
+  cursor: pointer;
+  left: 100px;
+  position: relative;
+}
+
+  </style>
+
+    <div class="container">
+      
+      <form>
+      <br>
+        <label for="sentence">Enter a sentence :</label>
+        <input type="text" id="sentence" />
+        <br>
+        </br>
+        <label for="text">Enter a letter :</label>
+        <input type="text" id="letter"/>
+        </br>
+        <button type="button" onclick="validate()">Submit</button>
+      </form>
+    </div>
+    <script>
+      function validate(sentence, letter, count) 
+      {
+        var occur = 0;
+        count = 1;
+        sentence = document.getElementById("sentence").value;
+        letter = document.getElementById("letter").value;
+
+        if (count == 0) {
+          document.write(sentence);
+          return;
+        }
+        for (i = 0; i < sentence.length; i++) {
+          if (sentence.charAt(i) == letter) {
+            occur++;
+          }
+          if (occur == count) {
+            break;
+          }
+        }
+        if (i < sentence.length - 1) {
+          alert("The Result: " + sentence.substring(i + 1));
+        } else {
+          alert("The letter doesn't exist in the sentence");
+        }
+      }
+    </script>
+  </body>
+</html>
